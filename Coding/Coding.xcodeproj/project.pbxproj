@@ -130,6 +130,10 @@
 		8FFFC17C1FA9CCD40060DCD4 /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFC1081FA9CCD40060DCD4 /* UIImage+Common.m */; };
 		8FFFC17D1FA9CCD40060DCD4 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFC10A1FA9CCD40060DCD4 /* UIView+Common.m */; };
 		8FFFC17E1FA9CCD40060DCD4 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFC10C1FA9CCD40060DCD4 /* UIView+Frame.m */; };
+		8FFFC1811FA9CF590060DCD4 /* 知识点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1801FA9CF590060DCD4 /* 知识点.rtf */; };
+		8FFFC1831FA9CF5E0060DCD4 /* 知识点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1821FA9CF5D0060DCD4 /* 知识点.rtf */; };
+		8FFFC1851FA9CF620060DCD4 /* 知识点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1841FA9CF610060DCD4 /* 知识点.rtf */; };
+		8FFFC1871FA9CF660060DCD4 /* 知识点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1861FA9CF660060DCD4 /* 知识点.rtf */; };
 		BE55E632EF2E15CEFEB6181E /* libPods-Coding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 976982C42B7F13B29120824D /* libPods-Coding.a */; };
 /* End PBXBuildFile section */
 
@@ -407,6 +411,10 @@
 		8FFFC10B1FA9CCD40060DCD4 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		8FFFC10C1FA9CCD40060DCD4 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		8FFFC17F1FA9CCFA0060DCD4 /* Code-PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Code-PrefixHeader.pch"; sourceTree = "<group>"; };
+		8FFFC1801FA9CF590060DCD4 /* 知识点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "知识点.rtf"; sourceTree = "<group>"; };
+		8FFFC1821FA9CF5D0060DCD4 /* 知识点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "知识点.rtf"; sourceTree = "<group>"; };
+		8FFFC1841FA9CF610060DCD4 /* 知识点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "知识点.rtf"; sourceTree = "<group>"; };
+		8FFFC1861FA9CF660060DCD4 /* 知识点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "知识点.rtf"; sourceTree = "<group>"; };
 		976982C42B7F13B29120824D /* libPods-Coding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coding.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3548533AE55863DC003BF41 /* Pods-Coding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coding/Pods-Coding.debug.xcconfig"; sourceTree = "<group>"; };
 		B15BF6B29977C5A6E3DA8FEF /* Pods-Coding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coding/Pods-Coding.release.xcconfig"; sourceTree = "<group>"; };
@@ -532,6 +540,7 @@
 		8FFFBFF71FA9CCD00060DCD4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFC1841FA9CF610060DCD4 /* 知识点.rtf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1026,6 +1035,7 @@
 		8FFFC0EB1FA9CCD20060DCD4 /* Ease_2FA */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFC1801FA9CF590060DCD4 /* 知识点.rtf */,
 			);
 			path = Ease_2FA;
 			sourceTree = "<group>";
@@ -1033,6 +1043,7 @@
 		8FFFC0EC1FA9CCD30060DCD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFC1861FA9CF660060DCD4 /* 知识点.rtf */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1057,6 +1068,7 @@
 		8FFFC0F11FA9CCD30060DCD4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFC1821FA9CF5D0060DCD4 /* 知识点.rtf */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1239,12 +1251,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFFC1811FA9CF590060DCD4 /* 知识点.rtf in Resources */,
 				8FFFC16F1FA9CCD40060DCD4 /* ReleaseNotes.txt in Resources */,
+				8FFFC1851FA9CF620060DCD4 /* 知识点.rtf in Resources */,
 				8FFFBFCB1FA9CA370060DCD4 /* LaunchScreen.storyboard in Resources */,
 				8FFFC14A1FA9CCD40060DCD4 /* QBImagePickerController.strings in Resources */,
 				8FFFBFC81FA9CA370060DCD4 /* Assets.xcassets in Resources */,
 				8FFFC13B1FA9CCD40060DCD4 /* README.textile in Resources */,
 				8FFFC16D1FA9CCD40060DCD4 /* WeiboSDK.bundle in Resources */,
+				8FFFC1831FA9CF5E0060DCD4 /* 知识点.rtf in Resources */,
+				8FFFC1871FA9CF660060DCD4 /* 知识点.rtf in Resources */,
 				8FFFC1301FA9CCD40060DCD4 /* MJPhotoBrowser.bundle in Resources */,
 				8FFFBFC31FA9CA370060DCD4 /* Main.storyboard in Resources */,
 			);
