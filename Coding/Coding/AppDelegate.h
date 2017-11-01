@@ -16,7 +16,16 @@
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
+- (void)setupTabViewController;
+- (void)setupLoginViewController;
+- (void)setupIntroductionViewController;
+
+/**
+ *  注册推送
+ */
+- (void)registerPush;
 
 @end
 

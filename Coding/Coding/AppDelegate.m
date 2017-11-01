@@ -6,7 +6,22 @@
 //  Copyright © 2017年 hfk. All rights reserved.
 //
 
+#define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define _IPHONE80_ 80000
+
+#if DEBUG
+#import <FLEX/FLEXManager.h>
+#import "RRFPSBar.h"
+#endif
+
 #import "AppDelegate.h"
+#import "AFNetworking.h"
+#import "AFNetworkActivityIndicatorManager.h"
+#import "ViewController.h"
+#import "Login.h"
+
+
+
 
 @interface AppDelegate ()
 
@@ -16,10 +31,70 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    //网络
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    //sd加载的数据类型
+    [[[SDWebImageManager sharedManager] imageDownloader] setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    //设置导航条样式
+    [self customizeInterface];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    
+    //UIWebView 的 User-Agent
+    [self registerUserAgent];
+    
+    if ([Login isLogin]) {
+        
+    }else{
+        
+    }
+    
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
+- (void)customizeInterface {
+    //设置Nav的背景色和title色
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    [navigationBarAppearance setBackgroundImage:[UIImage imageWithColor:[NSObject baseURLStrIsProduction]? kColorNavBG: kColorBrandGreen] forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTintColor:kColorBrandGreen];//返回按钮的箭头颜色
+    NSDictionary *textAttributes = @{
+                                     NSFontAttributeName: [UIFont systemFontOfSize:kNavTitleFontSize],
+                                     NSForegroundColorAttributeName: kColorNavTitle,
+                                     };
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
+    
+    [[UITextField appearance] setTintColor:kColorBrandGreen];//设置UITextField的光标颜色
+    [[UITextView appearance] setTintColor:kColorBrandGreen];//设置UITextView的光标颜色
+    [[UISearchBar appearance] setBackgroundImage:[UIImage imageWithColor:kColorTableSectionBg] forBarPosition:0 barMetrics:UIBarMetricsDefault];
+}
+
+#pragma mark UserAgent
+- (void)registerUserAgent{
+    NSString *userAgent = [NSString userAgentStr];
+    NSDictionary *dictionary = @{@"UserAgent" : userAgent};//User-Agent
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
+}
+
+#pragma mark XGPush
+- (void)registerPush{
+    float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if(sysVer < 8){
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    }else{
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+                                                                                     categories:[NSSet setWithObject:categorys]];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:userSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+#endif
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -58,7 +133,7 @@
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"Coding"];
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"Code"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
@@ -71,7 +146,7 @@
                      * The device is out of space.
                      * The store could not be migrated to the current model version.
                      Check the error message to determine what the actual problem was.
-                    */
+                     */
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
                     abort();
                 }

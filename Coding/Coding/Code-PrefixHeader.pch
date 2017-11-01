@@ -1,0 +1,116 @@
+//
+//  Code-PrefixHeader.pch
+//  Code
+//
+//  Created by hfk on 2017/5/3.
+//  Copyright © 2017年 hfk. All rights reserved.
+//
+
+#ifndef Code_PrefixHeader_pch
+#define Code_PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "AFNetworking.h"
+
+
+#import "UIColor+expanded.h"
+#import "UIImage+Common.h"
+#import "NSObject+Common.h"
+#import "NSString+Common.h"
+#import "NSObject+ObjectMap.h"
+#import "UIView+Frame.h"
+#import "UIView+Common.h"
+
+
+
+
+#import "UIImageView+WebCache.h"
+#import <Masonry/Masonry.h>
+#import <BlocksKit/BlocksKit+UIKit.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+
+#define  kBackButtonFontSize 16
+#define  kNavTitleFontSize 18
+#define  kBadgeTipStr @"badgeTip"
+
+#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
+
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+
+
+#define kDevice_Is_iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+
+
+#define kColorNavBG [UIColor colorWithHexString:@"0xF8F8F8"]
+#define kColorNavTitle [UIColor colorWithHexString:@"0x323A45"]
+#define kColorTableBG [UIColor colorWithHexString:@"0xFFFFFF"]
+#define kColorTableSectionBg [UIColor colorWithHexString:@"0xF2F4F6"]
+#define kColor222 [UIColor colorWithHexString:@"0x222222"]
+#define kColor666 [UIColor colorWithHexString:@"0x666666"]
+#define kColor999 [UIColor colorWithHexString:@"0x999999"]
+#define kColorDDD [UIColor colorWithHexString:@"0xDDDDDD"]
+#define kColorCCC [UIColor colorWithHexString:@"0xCCCCCC"]
+#define kColorBrandGreen [UIColor colorWithHexString:@"0x3BBD79"]
+#define kColorBrandRed [UIColor colorWithHexString:@"0xFF5846"]
+
+
+
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+
+///=============================================
+/// @name Weak Object
+///=============================================
+#pragma mark - Weak Object
+
+/**
+ * @code
+ * ESWeak(imageView, weakImageView);
+ * [self testBlock:^(UIImage *image) {
+ *         ESStrong(weakImageView, strongImageView);
+ *         strongImageView.image = image;
+ * }];
+ *
+ * // `ESWeak_(imageView)` will create a var named `weak_imageView`
+ * ESWeak_(imageView);
+ * [self testBlock:^(UIImage *image) {
+ *         ESStrong_(imageView);
+ *     _imageView.image = image;
+ * }];
+ *
+ * // weak `self` and strong `self`
+ * ESWeakSelf;
+ * [self testBlock:^(UIImage *image) {
+ *         ESStrongSelf;
+ *         _self.image = image;
+ * }];
+ * @endcode
+ */
+
+#define ESWeak(var, weakVar) __weak __typeof(&*var) weakVar = var
+#define ESStrong_DoNotCheckNil(weakVar, _var) __typeof(&*weakVar) _var = weakVar
+#define ESStrong(weakVar, _var) ESStrong_DoNotCheckNil(weakVar, _var); if (!_var) return;
+
+#define ESWeak_(var) ESWeak(var, weak_##var);
+#define ESStrong_(var) ESStrong(weak_##var, _##var);
+
+/** defines a weak `self` named `__weakSelf` */
+#define ESWeakSelf      ESWeak(self, __weakSelf);
+/** defines a strong `self` named `_self` from `__weakSelf` */
+#define ESStrongSelf    ESStrong(__weakSelf, _self);
+
+
+
+
+#endif /* Code_PrefixHeader_pch */
+
