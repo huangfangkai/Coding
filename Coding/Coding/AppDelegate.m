@@ -19,8 +19,7 @@
 #import "AFNetworkActivityIndicatorManager.h"
 #import "ViewController.h"
 #import "Login.h"
-
-
+#import "IntroductionViewController.h"
 
 
 @interface AppDelegate ()
@@ -48,9 +47,9 @@
     if ([Login isLogin]) {
         
     }else{
-        
+        [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+        [self setupIntroductionViewController];
     }
-    
     [self.window makeKeyAndVisible];
     
     
@@ -79,6 +78,12 @@
     NSDictionary *dictionary = @{@"UserAgent" : userAgent};//User-Agent
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 }
+
+- (void)setupIntroductionViewController{
+    IntroductionViewController *introductionVC = [[IntroductionViewController alloc] init];
+    [self.window setRootViewController:introductionVC];
+}
+
 
 #pragma mark XGPush
 - (void)registerPush{

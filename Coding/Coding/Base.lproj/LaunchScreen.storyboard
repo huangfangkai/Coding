@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +22,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_coding_top.png" translatesAutoresizingMaskIntoConstraints="NO" id="uda-Lm-bFT">
+                                <rect key="frame" x="62.5" y="126" width="250" height="62.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uda-Lm-bFT" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="2:3" id="TG7-2g-iOS"/>
+                            <constraint firstItem="uda-Lm-bFT" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1:6" identifier="1:6" id="UPS-Pw-66O"/>
+                            <constraint firstItem="uda-Lm-bFT" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iEk-5c-qPj"/>
+                            <constraint firstItem="uda-Lm-bFT" firstAttribute="top" secondItem="dLb-Hf-34m" secondAttribute="bottom" multiplier="1:7" constant="123" id="qLW-Xz-cy8"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,4 +41,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_coding_top.png" width="414" height="103"/>
+    </resources>
 </document>

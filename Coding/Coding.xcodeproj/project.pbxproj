@@ -164,6 +164,7 @@
 		8FFFC1DE1FAAEBA40060DCD4 /* intro_icon_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1C01FAAEBA30060DCD4 /* intro_icon_1@2x.png */; };
 		8FFFC1DF1FAAEBA40060DCD4 /* intro_icon_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1C11FAAEBA40060DCD4 /* intro_icon_3@2x.png */; };
 		8FFFC1E51FAB01340060DCD4 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFFC1E41FAB01340060DCD4 /* IntroductionViewController.m */; };
+		8FFFC1E91FAC1C040060DCD4 /* logo_coding_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFFC1E81FAC1C000060DCD4 /* logo_coding_top@2x.png */; };
 		BE55E632EF2E15CEFEB6181E /* libPods-Coding.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 976982C42B7F13B29120824D /* libPods-Coding.a */; };
 /* End PBXBuildFile section */
 
@@ -476,6 +477,7 @@
 		8FFFC1C11FAAEBA40060DCD4 /* intro_icon_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro_icon_3@2x.png"; sourceTree = "<group>"; };
 		8FFFC1E31FAB01340060DCD4 /* IntroductionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroductionViewController.h; sourceTree = "<group>"; };
 		8FFFC1E41FAB01340060DCD4 /* IntroductionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroductionViewController.m; sourceTree = "<group>"; };
+		8FFFC1E81FAC1C000060DCD4 /* logo_coding_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_coding_top@2x.png"; sourceTree = "<group>"; };
 		976982C42B7F13B29120824D /* libPods-Coding.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coding.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3548533AE55863DC003BF41 /* Pods-Coding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coding/Pods-Coding.debug.xcconfig"; sourceTree = "<group>"; };
 		B15BF6B29977C5A6E3DA8FEF /* Pods-Coding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coding.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coding/Pods-Coding.release.xcconfig"; sourceTree = "<group>"; };
@@ -1130,6 +1132,7 @@
 		8FFFC0F11FA9CCD30060DCD4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8FFFC1E81FAC1C000060DCD4 /* logo_coding_top@2x.png */,
 				8FFFC1A31FAAEB790060DCD4 /* introduction */,
 			);
 			path = Images;
@@ -1370,6 +1373,7 @@
 				8FFFC1DF1FAAEBA40060DCD4 /* intro_icon_3@2x.png in Resources */,
 				8FFFC1C91FAAEBA40060DCD4 /* intro_dot_unselected@2x.png in Resources */,
 				8FFFBFCB1FA9CA370060DCD4 /* LaunchScreen.storyboard in Resources */,
+				8FFFC1E91FAC1C040060DCD4 /* logo_coding_top@2x.png in Resources */,
 				8FFFC14A1FA9CCD40060DCD4 /* QBImagePickerController.strings in Resources */,
 				8FFFC1CE1FAAEBA40060DCD4 /* intro_icon_6@2x.png in Resources */,
 				8FFFC1D71FAAEBA40060DCD4 /* intro_icon_5@2x.png in Resources */,
